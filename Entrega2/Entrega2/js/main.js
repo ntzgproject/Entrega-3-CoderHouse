@@ -9,16 +9,22 @@ do {
     switch (opcion) {
         case 1:
             let ingreso = parseInt(prompt("Ingrese la cantidad de dinero a ingresar:"));
-            saldoActual += ingreso;
-            alert("Saldo actual: $" + saldoActual);
-            movimientos.push("Ingreso: $" + ingreso);
-            break;
+            if(isNaN(ingreso)){
+                alert("Por favor, ingrese un número válido.");
+                break;
+            } else {
+                saldoActual += ingreso;
+                alert("Saldo actual: $" + saldoActual);
+                movimientos.push("Ingreso: $" + ingreso);
+                break;
+            }
 
         case 2:
             let retiro = parseInt(prompt("Ingrese la cantidad de dinero a retirar:"));
-            if (retiro > saldoActual) {
+            if (isNaN(retiro)) {
+                alert("Por favor, ingrese un número válido.");
+            } else if (retiro > saldoActual) {
                 alert("No tienes suficiente saldo para retirar esa cantidad.");
-
             } else if (retiro <= 0) {
                 alert("La cantidad a retirar debe ser mayor a cero.");
 
@@ -49,5 +55,5 @@ do {
     }
 
 
-} while (opcion != 4);
+} while (opcion != 5);
 
