@@ -16,7 +16,7 @@ const trasferir = (valor, destinatario) => {
 }
 
 const retirarDinero = (limite, retiro) => {
-    if (limite === null) {
+    if (limite === null || limite === undefined) {
         saldoActual -= retiro;
         alert("Saldo actual: $" + saldoActual);
         movimientos.push("Retiro: $" + retiro);
