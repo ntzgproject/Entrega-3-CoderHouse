@@ -76,7 +76,6 @@ do {
 
         // Retirar dinero
         case 2:
-            case 2:
                 let retiro = parseInt(prompt("Ingrese la cantidad de dinero a retirar:"));
                 if (!validarMonto(retiro)) {
                     alert("La cantidad a retirar es incorrecta.");
